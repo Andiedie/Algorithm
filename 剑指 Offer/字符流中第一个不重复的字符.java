@@ -22,6 +22,7 @@ class Solution {
     // Insert one char from stringstream
     private int[] count = new int[128];
     private Queue<Character> queue = new LinkedList<>();
+
     public void Insert(char ch) {
         count[ch] = Math.min(count[ch] + 1, Integer.MAX_VALUE);
         if (count[ch] == 1) {
@@ -31,8 +32,10 @@ class Solution {
 
     // return the first appearence once char in current stringstream
     public char FirstAppearingOnce() {
-        while (!queue.isEmpty() && count[queue.peek()] > 1) queue.poll();
-        if (queue.isEmpty()) return '#';
+        while (!queue.isEmpty() && count[queue.peek()] > 1)
+            queue.poll();
+        if (queue.isEmpty())
+            return '#';
         return queue.peek();
     }
 }

@@ -9,35 +9,44 @@
  * 访问过的节点设置为 #，回溯时还原原来的值
  */
 class Solution {
-  private char[] matrix;
-  private int cols;
-  private char[] str;
-  public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
-      this.matrix = matrix;
-      this.cols = cols;
-      this.str = str;
-      for (int row = 0; row < rows; row++) {
-          for (int col = 0; col < cols; col++) {
-              if (dfs(row, col, 0)) {
-                  return true;
-              }
-          }
-      }
-      return false;
-  }
-  private boolean dfs(int row, int col, int index) {
-      if (index == str.length) return true;
-      int cur = row * cols + col;
-      if (cur < 0 || cur >= matrix.length) return false;
-      if (matrix[cur] != str[index]) return false;
-      boolean found = false;
-      char saved = matrix[cur];
-      matrix[cur] = '#';
-      if (!found && dfs(row - 1, col, index + 1)) found = true;
-      if (!found && dfs(row + 1, col, index + 1)) found = true;
-      if (!found && dfs(row, col - 1, index + 1)) found = true;
-      if (!found && dfs(row, col + 1, index + 1)) found = true;
-      matrix[cur] = saved;
-      return found;
-  }
+    private char[] matrix;
+    private int cols;
+    private char[] str;
+
+    public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
+        this.matrix = matrix;
+        this.cols = cols;
+        this.str = str;
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (dfs(row, col, 0)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private boolean dfs(int row, int col, int index) {
+        if (index == str.length)
+            return true;
+        int cur = row * cols + col;
+        if (cur < 0 || cur >= matrix.length)
+            return false;
+        if (matrix[cur] != str[index])
+            return false;
+        boolean found = false;
+        char saved = matrix[cur];
+        matrix[cur] = '#';
+        if (!found && dfs(row - 1, col, index + 1))
+            found = true;
+        if (!found && dfs(row + 1, col, index + 1))
+            found = true;
+        if (!found && dfs(row, col - 1, index + 1))
+            found = true;
+        if (!found && dfs(row, col + 1, index + 1))
+            found = true;
+        matrix[cur] = saved;
+        return found;
+    }
 }

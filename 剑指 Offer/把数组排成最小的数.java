@@ -9,16 +9,18 @@ import java.util.ArrayList;
  */
 
 class Solution {
-    public String PrintMinNumber(int [] numbers) {
+    public String PrintMinNumber(int[] numbers) {
         ArrayList<Integer> list = new ArrayList<>(numbers.length);
-        for (int i : numbers) list.add(i);
+        for (int i : numbers)
+            list.add(i);
         list.sort((a, b) -> {
             String s1 = a.toString() + b.toString();
             String s2 = b.toString() + a.toString();
             return s1.compareTo(s2);
         });
         StringBuilder sb = new StringBuilder();
-        for (int i : list) sb.append(i);
+        for (int i : list)
+            sb.append(i);
         return sb.toString();
     }
 }

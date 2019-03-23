@@ -7,7 +7,7 @@
  * 可以从后往前替换，这样移动数组的次数更少一些
  */
 class Solution {
-  public String replaceSpace(StringBuffer str) {
-      return str.toString().replaceAll(" ", "%20");
-  }
+    public String replaceSpace(StringBuffer str) {
+        return str.toString().replaceAll(" ", "%20");
+    }
 }

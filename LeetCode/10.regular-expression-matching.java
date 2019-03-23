@@ -90,25 +90,27 @@
 class Solution {
     // dp[i][j] means: is text[i...] matches pattern[j...]
     Boolean[][] dp;
+
     public boolean isMatch(String s, String p) {
         // 多申请一位是为了防止越界
         // 也可以为了节约内存，申请恰好的长度，但是要做更多的边界情况检查
         dp = new Boolean[s.length() + 1][p.length() + 1];
         return isMatch(0, 0, s, p);
     }
+
     private boolean isMatch(int sIndex, int pIndex, String s, String p) {
-        if (dp[sIndex][pIndex] != null) return dp[sIndex][pIndex];
+        if (dp[sIndex][pIndex] != null)
+            return dp[sIndex][pIndex];
         boolean answer;
         if (pIndex == p.length()) {
             answer = sIndex == s.length();
         } else {
             // 计算第一个字符是否匹配
             boolean firstMatch = (
-                // 如果源字符串已经空了，自然不匹配
-                sIndex < s.length() &&
-                // 相等和 . 符号都是匹配
-                (s.charAt(sIndex) == p.charAt(pIndex) || p.charAt(pIndex) == '.')
-            );
+            // 如果源字符串已经空了，自然不匹配
+            sIndex < s.length() &&
+            // 相等和 . 符号都是匹配
+                    (s.charAt(sIndex) == p.charAt(pIndex) || p.charAt(pIndex) == '.'));
             if (pIndex + 1 < p.length() && p.charAt(pIndex + 1) == '*') {
                 // 如果下一位是 * ，那么要么不匹配任何字符，要么继续用 * 号匹配下去
                 answer = isMatch(sIndex, pIndex + 2, s, p) || (firstMatch && isMatch(sIndex + 1, pIndex, s, p));

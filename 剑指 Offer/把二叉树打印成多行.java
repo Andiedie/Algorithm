@@ -11,7 +11,8 @@ import java.util.Queue;
 class Solution {
     ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
-        if (pRoot == null) return ans;
+        if (pRoot == null)
+            return ans;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(pRoot);
         while (!queue.isEmpty()) {
@@ -20,8 +21,10 @@ class Solution {
             while (num-- > 0) {
                 TreeNode node = queue.poll();
                 list.add(node.val);
-                if (node.left != null) queue.add(node.left);
-                if (node.right != null) queue.add(node.right);
+                if (node.left != null)
+                    queue.add(node.left);
+                if (node.right != null)
+                    queue.add(node.right);
             }
             ans.add(list);
         }

@@ -51,28 +51,30 @@
 // }
 
 class Solution {
-  public ListNode EntryNodeOfLoop(ListNode node) {
-      ListNode fast = node, slow = node;
-      while (fast != null && fast.next != null) {
-          fast = fast.next.next;
-          slow = slow.next;
-          if (fast == slow) break;
-      }
-      if (fast.next == null) return null;
-      fast = node;
-      while (fast != slow) {
-          fast = fast.next;
-          slow = slow.next;
-      }
-      return fast;
-  }
+    public ListNode EntryNodeOfLoop(ListNode node) {
+        ListNode fast = node, slow = node;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow)
+                break;
+        }
+        if (fast.next == null)
+            return null;
+        fast = node;
+        while (fast != slow) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return fast;
+    }
 }
 
 class ListNode {
-  int val;
-  ListNode next = null;
+    int val;
+    ListNode next = null;
 
-  ListNode(int val) {
-      this.val = val;
-  }
+    ListNode(int val) {
+        this.val = val;
+    }
 }

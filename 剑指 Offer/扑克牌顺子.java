@@ -13,20 +13,24 @@
  * 综上，只需要确认每个牌只出现过一次，并且 max - min < n 即可
  */
 class Solution {
-  public boolean isContinuous(int[] numbers) {
-      int n = numbers.length;
-      if (n < 1) return false;
-      int min = 14;
-      int max = -1;
-      boolean[] exists = new boolean[14];
-      for (int num : numbers) {
-          if (num == 0) continue;
-          if (exists[num]) return false;
-          exists[num] = true;
-          max = Math.max(max, num);
-          min = Math.min(min, num);
-          if (max - min >= n) return false;
-      }
-      return true;
-  }
+    public boolean isContinuous(int[] numbers) {
+        int n = numbers.length;
+        if (n < 1)
+            return false;
+        int min = 14;
+        int max = -1;
+        boolean[] exists = new boolean[14];
+        for (int num : numbers) {
+            if (num == 0)
+                continue;
+            if (exists[num])
+                return false;
+            exists[num] = true;
+            max = Math.max(max, num);
+            min = Math.min(min, num);
+            if (max - min >= n)
+                return false;
+        }
+        return true;
+    }
 }

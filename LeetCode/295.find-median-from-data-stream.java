@@ -76,9 +76,11 @@ import java.util.PriorityQueue;
 class MedianFinder {
     private PriorityQueue<Integer> lo = new PriorityQueue<>(Collections.reverseOrder());
     private PriorityQueue<Integer> hi = new PriorityQueue<>();
+
     /** initialize your data structure here. */
-    public MedianFinder() { }
-    
+    public MedianFinder() {
+    }
+
     public void addNum(int num) {
         lo.add(num);
         hi.add(lo.poll());
@@ -86,7 +88,7 @@ class MedianFinder {
             lo.add(hi.poll());
         }
     }
-    
+
     public double findMedian() {
         return lo.size() > hi.size() ? lo.peek() : (lo.peek() + hi.peek()) * 0.5;
     }
@@ -98,4 +100,3 @@ class MedianFinder {
  * obj.addNum(num);
  * double param_2 = obj.findMedian();
  */
-

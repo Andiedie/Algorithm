@@ -14,7 +14,8 @@ import java.util.Collections;
 class Solution {
     public ArrayList<String> Permutation(String str) {
         ArrayList<String> ans = new ArrayList<>();
-        if (str.length() == 0) return ans;
+        if (str.length() == 0)
+            return ans;
         helper(str.toCharArray(), 0, ans);
         // 题目要求必须字典序
         Collections.sort(ans);
@@ -22,7 +23,8 @@ class Solution {
     }
 
     private void helper(char[] str, int start, ArrayList<String> ans) {
-        if (start == str.length - 1) ans.add(String.valueOf(str));
+        if (start == str.length - 1)
+            ans.add(String.valueOf(str));
         for (int i = start; i < str.length; i++) {
             // 排除重复元素
             if (i != start && str[start] == str[i]) {
@@ -33,6 +35,7 @@ class Solution {
             swap(str, i, start);
         }
     }
+
     private void swap(char[] a, int i, int j) {
         char temp = a[i];
         a[i] = a[j];

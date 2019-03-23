@@ -85,17 +85,22 @@ class Solution {
     private Map<Integer, List<String>> store;
     private int maxLength = 0;
     private String str;
+
     public List<String> wordBreak(String s, List<String> wordDict) {
         str = s;
         dict = new HashSet<>(wordDict);
         store = new HashMap<>();
-        for (String word : wordDict) maxLength = Math.max(maxLength, word.length());
+        for (String word : wordDict)
+            maxLength = Math.max(maxLength, word.length());
         return DFS(0);
     }
+
     private List<String> DFS(int start) {
-        if (store.containsKey(start)) return store.get(start);
+        if (store.containsKey(start))
+            return store.get(start);
         List<String> res = new LinkedList<>();
-        if (start == str.length()) res.add(null);
+        if (start == str.length())
+            res.add(null);
         for (int i = start; i < start + maxLength && i < str.length(); i++) {
             String substr = str.substring(start, i + 1);
             if (dict.contains(substr)) {
@@ -113,4 +118,3 @@ class Solution {
         return res;
     }
 }
-

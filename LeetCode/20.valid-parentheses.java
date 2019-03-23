@@ -72,15 +72,20 @@ class Solution {
             if (c == '(' || c == '{' || c == '[') {
                 stack.add(c);
             } else {
-                if (stack.size() == 0) return false;
+                if (stack.size() == 0)
+                    return false;
                 char open = stack.pop();
-                if (c == ')' && open != '(') return false;
-                if (c == '}' && open != '{') return false;
-                if (c == ']' && open != '[') return false;
+                if (c == ')' && open != '(')
+                    return false;
+                if (c == '}' && open != '{')
+                    return false;
+                if (c == ']' && open != '[')
+                    return false;
             }
         }
         return stack.isEmpty();
     }
+
     public static void main(String[] args) {
         new Solution().isValid("()");
     }

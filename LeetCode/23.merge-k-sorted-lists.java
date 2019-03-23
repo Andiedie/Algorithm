@@ -49,7 +49,8 @@ import java.util.Queue;
  */
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
-        if (lists.length == 0) return null;
+        if (lists.length == 0)
+            return null;
         ListNode dummyHead = new ListNode(0);
         ListNode current = dummyHead;
         Queue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {

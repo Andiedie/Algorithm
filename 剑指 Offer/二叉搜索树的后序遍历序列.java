@@ -23,18 +23,23 @@
  */
 
 class Solution {
-  public boolean VerifySquenceOfBST(int [] s) {
-      if (s.length == 0) return false;
-      return helper(s, 0, s.length - 1);
-  }
-  private boolean helper(int[] s, int left, int right) {
-      if (left >= right) return true;
-      int root = s[right];
-      int rightStart = left;
-      while (s[rightStart] < root && rightStart < right) rightStart++;
-      for (int i = rightStart; i < right; i++) {
-          if (s[i] < root) return false;
-      }
-      return helper(s, left, rightStart - 1) && helper(s, rightStart, right - 1);
-  }
+    public boolean VerifySquenceOfBST(int[] s) {
+        if (s.length == 0)
+            return false;
+        return helper(s, 0, s.length - 1);
+    }
+
+    private boolean helper(int[] s, int left, int right) {
+        if (left >= right)
+            return true;
+        int root = s[right];
+        int rightStart = left;
+        while (s[rightStart] < root && rightStart < right)
+            rightStart++;
+        for (int i = rightStart; i < right; i++) {
+            if (s[i] < root)
+                return false;
+        }
+        return helper(s, left, rightStart - 1) && helper(s, rightStart, right - 1);
+    }
 }

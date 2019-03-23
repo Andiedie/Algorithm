@@ -56,9 +56,11 @@ class Solution {
     public int longestConsecutive(int[] nums) {
         Set<Integer> set = new HashSet<Integer>();
         int longestStreak = 0;
-        for (int num : nums) set.add(num);
+        for (int num : nums)
+            set.add(num);
         for (int num : set) {
-            if (set.contains(num - 1)) continue;
+            if (set.contains(num - 1))
+                continue;
             int currentStreak = 1;
             while (set.contains(++num)) {
                 currentStreak += 1;
@@ -68,4 +70,3 @@ class Solution {
         return longestStreak;
     }
 }
-

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+
 /*
  * @lc app=leetcode id=212 lang=java
  *
@@ -60,6 +61,7 @@ class Solution {
         TrieNode[] next = new TrieNode[26];
         String word;
     }
+
     public List<String> findWords(char[][] board, String[] words) {
         List<String> res = new ArrayList<>();
         TrieNode root = buildTrie(words);
@@ -70,6 +72,7 @@ class Solution {
         }
         return res;
     }
+
     private TrieNode buildTrie(String[] words) {
         TrieNode root = new TrieNode();
         for (String word : words) {
@@ -85,11 +88,14 @@ class Solution {
         }
         return root;
     }
+
     private void dfs(char[][] board, int x, int y, TrieNode node, List<String> ans) {
-        if (x < 0 || y < 0 || x == board.length || y == board[x].length) return;
+        if (x < 0 || y < 0 || x == board.length || y == board[x].length)
+            return;
         char c = board[x][y];
         int index = c - 'a';
-        if (c == '#' || node.next[index] == null) return;
+        if (c == '#' || node.next[index] == null)
+            return;
         node = node.next[index];
         if (node.word != null) {
             ans.add(node.word);
@@ -104,4 +110,3 @@ class Solution {
         board[x][y] = c;
     }
 }
-

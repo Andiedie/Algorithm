@@ -75,24 +75,26 @@ import java.util.List;
 class Solution {
     public List<int[]> getSkyline(int[][] buildings) {
         List<int[]> res = new ArrayList<>();
-        if (buildings == null || buildings.length == 0) return res;
+        if (buildings == null || buildings.length == 0)
+            return res;
         int n = buildings.length;
         return findSkyline(buildings, 0, n - 1);
     }
-    
+
     private LinkedList<int[]> findSkyline(int[][] buildings, int lo, int hi) {
         LinkedList<int[]> res = new LinkedList<>();
-        if (lo > hi) return res;
+        if (lo > hi)
+            return res;
         if (lo == hi) {
-            res.add(new int[] { buildings[lo][0], buildings[lo][2]});
-            res.add(new int[] { buildings[lo][1], 0});
+            res.add(new int[] { buildings[lo][0], buildings[lo][2] });
+            res.add(new int[] { buildings[lo][1], 0 });
             return res;
         }
         int mid = lo + (hi - lo) / 2;
         LinkedList<int[]> left = findSkyline(buildings, lo, mid);
         LinkedList<int[]> right = findSkyline(buildings, mid + 1, hi);
         int leftH = 0, rightH = 0;
-        
+
         while (!left.isEmpty() && !right.isEmpty()) {
             int x1 = left.peekFirst()[0];
             int x2 = right.peekFirst()[0];
@@ -107,12 +109,11 @@ class Solution {
             }
             int h = Math.max(leftH, rightH);
             if (res.isEmpty() || h != res.peekLast()[1]) {
-                res.add(new int[] {x, h});
+                res.add(new int[] { x, h });
             }
         }
         res.addAll(left);
         res.addAll(right);
         return res;
     }
-} 
-
+}

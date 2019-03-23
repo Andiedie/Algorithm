@@ -18,7 +18,8 @@ class Solution {
         while (left < right) {
             int sum = (left + right) * (right - left + 1) / 2;
             if (sum == target) {
-                ArrayList<Integer> a = new ArrayList<>(IntStream.rangeClosed(left, right).boxed().collect(Collectors.toList()));
+                ArrayList<Integer> a = new ArrayList<>(
+                        IntStream.rangeClosed(left, right).boxed().collect(Collectors.toList()));
                 ans.add(a);
                 left++;
             } else if (sum < target) {

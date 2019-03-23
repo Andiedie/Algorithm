@@ -7,27 +7,28 @@
  */
 
 class Solution {
-  public ListNode FindKthToTail(ListNode head, int k) {
-      ListNode first = head;
-      ListNode second = head;
-      while (k-- > 0) {
-          // 如果链表长度不足，返回 null
-          if (first == null) return null;
-          first = first.next;
-      }
-      while (first != null) {
-          first = first.next;
-          second = second.next;
-      }
-      return second;
-  }
+    public ListNode FindKthToTail(ListNode head, int k) {
+        ListNode first = head;
+        ListNode second = head;
+        while (k-- > 0) {
+            // 如果链表长度不足，返回 null
+            if (first == null)
+                return null;
+            first = first.next;
+        }
+        while (first != null) {
+            first = first.next;
+            second = second.next;
+        }
+        return second;
+    }
 }
 
 class ListNode {
-  int val;
-  ListNode next = null;
+    int val;
+    ListNode next = null;
 
-  ListNode(int val) {
-      this.val = val;
-  }
+    ListNode(int val) {
+        this.val = val;
+    }
 }

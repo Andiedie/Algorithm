@@ -15,7 +15,8 @@ import java.util.LinkedList;
 class Solution {
     public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
-        if (pRoot == null) return ans;
+        if (pRoot == null)
+            return ans;
         ArrayList<Integer> list = new ArrayList<>();
         // 使用链表实现的队列
         LinkedList<TreeNode> queue = new LinkedList<>();

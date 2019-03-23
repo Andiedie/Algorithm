@@ -48,13 +48,14 @@ import java.util.Map;
  */
 class Solution {
     public String fractionToDecimal(int numerator, int denominator) {
-        if (numerator == 0) return "0";
+        if (numerator == 0)
+            return "0";
         StringBuilder res = new StringBuilder();
         // 符号位
         res.append((numerator > 0) ^ (denominator > 0) ? "-" : "");
-        
-        long num = Math.abs((long)numerator);
-        long den = Math.abs((long)denominator);
+
+        long num = Math.abs((long) numerator);
+        long den = Math.abs((long) denominator);
 
         // 整数部分
         res.append(num / den);
@@ -82,4 +83,3 @@ class Solution {
         return res.toString();
     }
 }
-

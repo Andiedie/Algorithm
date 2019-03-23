@@ -5,11 +5,15 @@
  */
 class Solution {
     private int count = 0;
+
     TreeNode KthNode(TreeNode pRoot, int k) {
-        if (pRoot == null) return null;
+        if (pRoot == null)
+            return null;
         TreeNode node = KthNode(pRoot.left, k);
-        if (node != null) return node;
-        if (++count == k) return pRoot;
+        if (node != null)
+            return node;
+        if (++count == k)
+            return pRoot;
         node = KthNode(pRoot.right, k);
         return node;
     }

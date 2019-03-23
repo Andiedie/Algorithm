@@ -14,27 +14,30 @@
  * 在进行一次循环，确认这个数字的出现次数大于 n / 2即可
  */
 class Solution {
-  public int MoreThanHalfNum_Solution(int [] array) {
-      int n = array.length;
-      if (n == 0) return 0;
-      int cur = array[0];
-      int count = 1;
-      for (int i = 0; i < n; i++) {
-          if (array[i] == cur) {
-              count++;
-          } else {
-              count--;
-              if (count == 0) {
-                  count = 1;
-                  cur = array[i];
-              }
-          }
-      }
-      count = 0;
-      for (int i : array) {
-          if (i == cur) count++;
-      }
-      if (count > n / 2) return cur;
-      return 0;
-  }
+    public int MoreThanHalfNum_Solution(int[] array) {
+        int n = array.length;
+        if (n == 0)
+            return 0;
+        int cur = array[0];
+        int count = 1;
+        for (int i = 0; i < n; i++) {
+            if (array[i] == cur) {
+                count++;
+            } else {
+                count--;
+                if (count == 0) {
+                    count = 1;
+                    cur = array[i];
+                }
+            }
+        }
+        count = 0;
+        for (int i : array) {
+            if (i == cur)
+                count++;
+        }
+        if (count > n / 2)
+            return cur;
+        return 0;
+    }
 }

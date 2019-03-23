@@ -14,8 +14,10 @@ import java.util.LinkedList;
 class Solution {
     private ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
     private LinkedList<Integer> path = new LinkedList<>();
+
     public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
-        if (root == null) return ans;
+        if (root == null)
+            return ans;
         path.add(root.val);
         target -= root.val;
         if (target == 0 && root.left == null && root.right == null) {

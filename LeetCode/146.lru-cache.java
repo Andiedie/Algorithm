@@ -70,15 +70,18 @@ class LRUCache {
         public int key;
         public Node pre;
         public Node next;
+
         public Node(int key, int value) {
             this.key = key;
             this.value = value;
         }
     }
+
     private int capacity;
     private Node head;
     private Node tail;
     private HashMap<Integer, Node> store;
+
     public LRUCache(int capacity) {
         this.capacity = capacity;
         head = new Node(0, 0);
@@ -87,15 +90,16 @@ class LRUCache {
         tail.pre = head;
         store = new HashMap<>();
     }
-    
+
     public int get(int key) {
         Node node = store.get(key);
-        if (node == null) return -1;
+        if (node == null)
+            return -1;
         removeNode(node);
         addNode(node);
         return node.value;
     }
-    
+
     public void put(int key, int value) {
         Node node = store.get(key);
         if (node == null) {
@@ -112,6 +116,7 @@ class LRUCache {
             store.remove(toRemove.key);
         }
     }
+
     // 将节点添加到末尾
     private void addNode(Node node) {
         Node pre = tail.pre;
@@ -120,6 +125,7 @@ class LRUCache {
         node.next = tail;
         tail.pre = node;
     }
+
     // 将节点从链表删除
     private void removeNode(Node node) {
         Node oldPre = node.pre;
@@ -135,4 +141,3 @@ class LRUCache {
  * int param_1 = obj.get(key);
  * obj.put(key,value);
  */
-

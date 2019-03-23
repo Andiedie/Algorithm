@@ -1,5 +1,6 @@
 import java.util.Collections;
 import java.util.PriorityQueue;
+
 /**
  * 如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。
  * 如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
@@ -23,6 +24,7 @@ import java.util.PriorityQueue;
 class Solution {
     private PriorityQueue<Integer> hi = new PriorityQueue<>(Collections.reverseOrder());
     private PriorityQueue<Integer> lo = new PriorityQueue<>();
+
     public void Insert(Integer num) {
         lo.add(num);
         hi.add(lo.poll());
@@ -32,6 +34,6 @@ class Solution {
     }
 
     public Double GetMedian() {
-        return lo.size() > hi.size() ? (double)lo.peek() : (lo.peek() + hi.peek()) * 0.5;
+        return lo.size() > hi.size() ? (double) lo.peek() : (lo.peek() + hi.peek()) * 0.5;
     }
 }

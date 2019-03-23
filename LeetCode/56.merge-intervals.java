@@ -51,7 +51,8 @@ import java.util.List;
 class Solution {
     public List<Interval> merge(List<Interval> intervals) {
         List<Interval> ans = new ArrayList<>();
-        if (intervals.size() == 0) return ans;
+        if (intervals.size() == 0)
+            return ans;
         intervals.sort(new Comparator<Interval>() {
             @Override
             public int compare(Interval o1, Interval o2) {

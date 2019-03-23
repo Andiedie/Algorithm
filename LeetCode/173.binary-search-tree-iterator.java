@@ -88,11 +88,15 @@ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-    TreeNode(int x) { val = x; }
+
+    TreeNode(int x) {
+        val = x;
+    }
 }
 
 class BSTIterator {
     private Stack<TreeNode> stack;
+
     public BSTIterator(TreeNode root) {
         stack = new Stack<>();
         TreeNode cur = root;
@@ -101,7 +105,7 @@ class BSTIterator {
             cur = cur.left;
         }
     }
-    
+
     /** @return the next smallest number */
     public int next() {
         TreeNode node = stack.pop();
@@ -112,7 +116,7 @@ class BSTIterator {
         }
         return node.val;
     }
-    
+
     /** @return whether we have a next smallest number */
     public boolean hasNext() {
         return !stack.isEmpty();
@@ -125,4 +129,3 @@ class BSTIterator {
  * int param_1 = obj.next();
  * boolean param_2 = obj.hasNext();
  */
-

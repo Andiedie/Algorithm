@@ -5,23 +5,25 @@
  * 递归
  */
 class Solution {
-  public int TreeDepth(TreeNode root) {
-      return helper(root);
-  }
-  private int helper(TreeNode node) {
-      if (node == null) return 0;
-      return 1 + Math.max(helper(node.left), helper(node.right));
-  }
+    public int TreeDepth(TreeNode root) {
+        return helper(root);
+    }
+
+    private int helper(TreeNode node) {
+        if (node == null)
+            return 0;
+        return 1 + Math.max(helper(node.left), helper(node.right));
+    }
 }
 
 class TreeNode {
-  int val = 0;
-  TreeNode left = null;
-  TreeNode right = null;
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
 
-  public TreeNode(int val) {
-      this.val = val;
+    public TreeNode(int val) {
+        this.val = val;
 
-  }
+    }
 
 }

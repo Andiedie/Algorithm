@@ -120,10 +120,10 @@ class Solution {
                 // 没有任何匹配，失败
                 return false;
             }
-       }
-       // 如果还有 * 号，那么直接设这些 * 号不匹配任何东西，跳过即可
-       while (pIndex < p.length() && p.charAt(pIndex) == '*') pIndex++;
-       return pIndex == p.length();
+        }
+        // 如果还有 * 号，那么直接设这些 * 号不匹配任何东西，跳过即可
+        while (pIndex < p.length() && p.charAt(pIndex) == '*')
+            pIndex++;
+        return pIndex == p.length();
     }
 }
-

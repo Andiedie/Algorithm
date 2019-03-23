@@ -7,19 +7,19 @@
  * 也可以使用冒泡法
  */
 
- class Solution {
-  public void reOrderArray(int [] arr) {
-      int n = arr.length;
-      int[] temp = new int[n];
-      int indexLeft = 0, indexRight = n - 1;
-      for (int left = 0, right = n - 1; left < n; left++, right--) {
-          if (arr[left] % 2 == 1) {
-              temp[indexLeft++] = arr[left];
-          }
-          if (arr[right] % 2 == 0) {
-              temp[indexRight--] = arr[right];
-          }
-      }
-      System.arraycopy(temp, 0, arr, 0, n);
-  }
+class Solution {
+    public void reOrderArray(int[] arr) {
+        int n = arr.length;
+        int[] temp = new int[n];
+        int indexLeft = 0, indexRight = n - 1;
+        for (int left = 0, right = n - 1; left < n; left++, right--) {
+            if (arr[left] % 2 == 1) {
+                temp[indexLeft++] = arr[left];
+            }
+            if (arr[right] % 2 == 0) {
+                temp[indexRight--] = arr[right];
+            }
+        }
+        System.arraycopy(temp, 0, arr, 0, n);
+    }
 }

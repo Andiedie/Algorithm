@@ -107,11 +107,13 @@ class Solution {
             }
         }
     }
+
     private int liveNeighbors(int[][] board, int x, int y) {
         int count = 0;
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
-                if (i == 0 && j == 0) continue;
+                if (i == 0 && j == 0)
+                    continue;
                 if (x + i >= 0 && x + i < board.length && y + j >= 0 && y + j < board[x + i].length) {
                     count += board[x + i][y + j] & 1;
                 }
@@ -120,4 +122,3 @@ class Solution {
         return count;
     }
 }
-

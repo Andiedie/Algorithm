@@ -9,13 +9,13 @@
  * 优化空间复杂度 dp = max(dp + array[i], array[i])
  */
 class Solution {
-  public int FindGreatestSumOfSubArray(int[] array) {
-      int dp = array[0];
-      int ans = dp;
-      for (int i = 1; i < array.length; i++) {
-          dp = Math.max(dp + array[i], array[i]);
-          ans = Math.max(dp, ans);
-      }
-      return ans;
-  }
+    public int FindGreatestSumOfSubArray(int[] array) {
+        int dp = array[0];
+        int ans = dp;
+        for (int i = 1; i < array.length; i++) {
+            dp = Math.max(dp + array[i], array[i]);
+            ans = Math.max(dp, ans);
+        }
+        return ans;
+    }
 }

@@ -72,9 +72,12 @@ class Node {
  */
 class Solution {
     private Map<Integer, Node> map = new HashMap<>();
+
     public Node cloneGraph(Node node) {
-        if (node == null) return null;
-        if (map.containsKey(node.val)) return map.get(node.val);
+        if (node == null)
+            return null;
+        if (map.containsKey(node.val))
+            return map.get(node.val);
         Node clone = new Node(node.val, new ArrayList<>());
         map.put(clone.val, clone);
         for (Node neighbor : node.neighbors) {

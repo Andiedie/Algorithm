@@ -31,18 +31,22 @@ import java.util.Map;
 class Solution {
     private int[] pre;
     private Map<Integer, Integer> map = new HashMap<>();
-    public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
+
+    public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
         this.pre = pre;
-        for (int i = 0; i < in.length; i++) map.put(in[i], i);
+        for (int i = 0; i < in.length; i++)
+            map.put(in[i], i);
         return helper(0, pre.length - 1, 0, in.length - 1);
     }
+
     private TreeNode helper(int preLeft, int preRight, int inLeft, int inRight) {
-        if (preLeft > preRight || inLeft > inRight) return null;
+        if (preLeft > preRight || inLeft > inRight)
+            return null;
         int rootValue = pre[preLeft];
         int indexInIn = map.get(rootValue);
         TreeNode node = new TreeNode(rootValue);
         node.left = helper(preLeft + 1, preLeft + indexInIn - inLeft, inLeft, indexInIn - 1);
-        node.right = helper(preLeft + indexInIn - inLeft+ 1, preRight, indexInIn + 1, inRight);
+        node.right = helper(preLeft + indexInIn - inLeft + 1, preRight, indexInIn + 1, inRight);
         return node;
     }
 }
@@ -51,5 +55,8 @@ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-    TreeNode(int x) { val = x; }
+
+    TreeNode(int x) {
+        val = x;
+    }
 }

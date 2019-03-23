@@ -38,11 +38,13 @@ import java.util.List;
  */
 class Solution {
     private List<String> answers;
+
     public List<String> generateParenthesis(int n) {
         answers = new ArrayList<>();
         generate("", 0, 0, n);
         return answers;
     }
+
     private void generate(String current, int open, int close, int max) {
         if (current.length() == max * 2) {
             answers.add(current);

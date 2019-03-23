@@ -20,18 +20,19 @@
  * 由于每一次推算只需要上一次的状态，因此可以使用一个变量节省空间
  */
 class Solution {
-  public int[] multiply(int[] a) {
-      int n = a.length;
-      if (n == 0) return new int[0];
-      int[] b = new int[n];
-      int temp = 1;
-      for (int i = 0; i < n; temp *= a[i++]) {
-          b[i] = temp;
-      }
-      temp = 1;
-      for (int i = n - 1; i >= 0; temp *= a[i--]) {
-          b[i] *= temp;
-      }
-      return b;
-  }
+    public int[] multiply(int[] a) {
+        int n = a.length;
+        if (n == 0)
+            return new int[0];
+        int[] b = new int[n];
+        int temp = 1;
+        for (int i = 0; i < n; temp *= a[i++]) {
+            b[i] = temp;
+        }
+        temp = 1;
+        for (int i = n - 1; i >= 0; temp *= a[i--]) {
+            b[i] *= temp;
+        }
+        return b;
+    }
 }

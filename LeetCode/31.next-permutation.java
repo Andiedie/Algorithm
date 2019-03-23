@@ -65,21 +65,26 @@
 class Solution {
     public void nextPermutation(int[] nums) {
         int target = nums.length - 2;
-        while (target >= 0 && nums[target + 1] <= nums[target]) target--;
+        while (target >= 0 && nums[target + 1] <= nums[target])
+            target--;
         if (target >= 0) {
             int justBiggerIndex = nums.length - 1;
-            while (justBiggerIndex >= 0 && nums[justBiggerIndex] <= nums[target]) justBiggerIndex--;
+            while (justBiggerIndex >= 0 && nums[justBiggerIndex] <= nums[target])
+                justBiggerIndex--;
             swap(nums, target, justBiggerIndex);
         }
         reverse(nums, target + 1, nums.length - 1);
     }
+
     private void swap(int[] a, int i, int j) {
         int temp = a[i];
         a[i] = a[j];
         a[j] = temp;
     }
+
     private void reverse(int[] a, int start, int end) {
         int i = start, j = end;
-        while (i < j) swap(a, i++, j--);
+        while (i < j)
+            swap(a, i++, j--);
     }
 }

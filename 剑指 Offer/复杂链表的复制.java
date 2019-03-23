@@ -37,44 +37,45 @@
 // }
 
 class Solution {
-  public RandomListNode Clone(RandomListNode pHead) {
-      if (pHead == null) return null;
-      RandomListNode cur = pHead;
-      while (cur != null) {
-          RandomListNode clone = new RandomListNode(cur.label);
-          clone.next = cur.next;
-          cur.next = clone;
+    public RandomListNode Clone(RandomListNode pHead) {
+        if (pHead == null)
+            return null;
+        RandomListNode cur = pHead;
+        while (cur != null) {
+            RandomListNode clone = new RandomListNode(cur.label);
+            clone.next = cur.next;
+            cur.next = clone;
 
-          cur = clone.next;
-      }
+            cur = clone.next;
+        }
 
-      cur = pHead;
-      while (cur != null) {
-          RandomListNode clone = cur.next;
-          if (cur.random != null)
-              clone.random = cur.random.next;
+        cur = pHead;
+        while (cur != null) {
+            RandomListNode clone = cur.next;
+            if (cur.random != null)
+                clone.random = cur.random.next;
 
-          cur = clone.next;
-      }
+            cur = clone.next;
+        }
 
-      RandomListNode ans = pHead.next;
-      cur = pHead;
-      RandomListNode next;
-      while (cur.next != null) {
-          next = cur.next;
-          cur.next = next.next;
-          cur = next;
-      }
-      return ans;
-  }
+        RandomListNode ans = pHead.next;
+        cur = pHead;
+        RandomListNode next;
+        while (cur.next != null) {
+            next = cur.next;
+            cur.next = next.next;
+            cur = next;
+        }
+        return ans;
+    }
 }
 
 class RandomListNode {
-  int label;
-  RandomListNode next = null;
-  RandomListNode random = null;
+    int label;
+    RandomListNode next = null;
+    RandomListNode random = null;
 
-  RandomListNode(int label) {
-      this.label = label;
-  }
+    RandomListNode(int label) {
+        this.label = label;
+    }
 }

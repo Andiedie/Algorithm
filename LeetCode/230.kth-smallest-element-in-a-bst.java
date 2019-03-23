@@ -69,24 +69,31 @@ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-    TreeNode(int x) { val = x; }
+
+    TreeNode(int x) {
+        val = x;
+    }
 }
+
 class Solution {
     private int k = 0;
     private int ans = 0;
+
     public int kthSmallest(TreeNode root, int k) {
         this.k = k;
         dfs(root);
         return ans;
     }
+
     private void dfs(TreeNode node) {
-        if (node.left != null) dfs(node.left);
+        if (node.left != null)
+            dfs(node.left);
         k--;
         if (k == 0) {
             ans = node.val;
             return;
         }
-        if (node.right != null) dfs(node.right); 
+        if (node.right != null)
+            dfs(node.right);
     }
 }
-

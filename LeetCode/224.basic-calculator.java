@@ -59,30 +59,34 @@ class Solution {
         for (int i = 0; i < input.length; i++) {
             char c = input[i];
             switch (c) {
-                case '+': sign = 1; break;
-                case '-': sign = -1; break;
-                case '(':
-                    stack.add(result);
-                    stack.add(sign);
-                    result = 0;
-                    sign = 1;
+            case '+':
+                sign = 1;
+                break;
+            case '-':
+                sign = -1;
+                break;
+            case '(':
+                stack.add(result);
+                stack.add(sign);
+                result = 0;
+                sign = 1;
+                break;
+            case ')':
+                int prevSign = stack.pop();
+                int prevResult = stack.pop();
+                result = prevResult + prevSign * result;
+            default:
+                if (!Character.isDigit(c))
                     break;
-                case ')':
-                    int prevSign = stack.pop();
-                    int prevResult = stack.pop();
-                    result = prevResult + prevSign * result;
-                default:
-                    if (!Character.isDigit(c)) break;
-                    int start = i, end = i + 1;
-                    while (end < input.length && Character.isDigit(input[end])) {
-                        end++;
-                        i++;
-                    }
-                    result += sign * Integer.parseInt(s.substring(start, end));
-                    sign = 1;
+                int start = i, end = i + 1;
+                while (end < input.length && Character.isDigit(input[end])) {
+                    end++;
+                    i++;
+                }
+                result += sign * Integer.parseInt(s.substring(start, end));
+                sign = 1;
             }
         }
         return result;
     }
 }
-

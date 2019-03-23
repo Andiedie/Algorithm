@@ -17,25 +17,27 @@
  * 现在我们已经把原数组分成了两个子数组，每个子数组都包含一个只出现一次的数字，而其它数字都出现了两次。
  */
 class Solution {
-  public void FindNumsAppearOnce(int [] array, int num1[], int num2[]) {
-      int n = array.length;
-      num1[0] = num2[0] = 0;
-      if (n <= 1) {
-          return;
-      }
-      int index = 0, sum = 0;
-      for (int i : array) sum ^= i;
-      while (index < 32) {
-          if ((sum & (1 << index)) != 0) break;
-          index++;
-      }
-      for (int i : array) {
-          if ((i & (1 << index)) != 0) {
-              num2[0] ^= i;
-          } else {
-              num1[0] ^= i;
-          }
-      }
-      return;
-  }
+    public void FindNumsAppearOnce(int[] array, int num1[], int num2[]) {
+        int n = array.length;
+        num1[0] = num2[0] = 0;
+        if (n <= 1) {
+            return;
+        }
+        int index = 0, sum = 0;
+        for (int i : array)
+            sum ^= i;
+        while (index < 32) {
+            if ((sum & (1 << index)) != 0)
+                break;
+            index++;
+        }
+        for (int i : array) {
+            if ((i & (1 << index)) != 0) {
+                num2[0] ^= i;
+            } else {
+                num1[0] ^= i;
+            }
+        }
+        return;
+    }
 }

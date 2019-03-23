@@ -78,14 +78,17 @@ class Solution {
     private char[] digits;
     // 目标
     private long target;
+
     public List<String> addOperators(String num, int target) {
         this.answer = new ArrayList<>();
-        if (num.length() == 0) return this.answer;
+        if (num.length() == 0)
+            return this.answer;
         this.target = target;
         this.digits = num.toCharArray();
         this.recurse(0, 0, 0, 0, new LinkedList<>());
         return this.answer;
     }
+
     private void recurse(int index, long prevNum, long curNum, long value, LinkedList<String> ops) {
         // 扫描指示：
         // index 代表当前正在扫描的输入的位置
@@ -112,7 +115,7 @@ class Solution {
         curNum = curNum * 10 + Character.getNumericValue(this.digits[index]);
         // 当前计算值得字符串表示
         String curNumStr = Long.toString(curNum);
-        
+
         // 这个判断是为了避免 1 + 05 这样的情况出现
         // 也就是说，只有非 0 前缀才有资格扩展为数
         if (curNum > 0) {
@@ -147,4 +150,3 @@ class Solution {
         }
     }
 }
-

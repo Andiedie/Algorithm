@@ -48,12 +48,14 @@
  */
 class Solution {
     public double myPow(double x, int n) {
-        if (n == 0) return 1;
+        if (n == 0)
+            return 1;
         // 如果当前值是 -2147483648，即 32 位 int 的最小值
         // 那么下面的符号反转会导致移除
         // -(-2147483648) = 2147483648 > 2147483647 (32 位 int 最大值)
         // 所以先进行一次普通乘法
-        if (n == Integer.MIN_VALUE) return myPow(x * x, n / 2);
+        if (n == Integer.MIN_VALUE)
+            return myPow(x * x, n / 2);
         // 如果指数是负数，就转换成分数的正指数
         if (n < 0) {
             n = -n;
@@ -61,8 +63,8 @@ class Solution {
         }
         return n % 2 == 0 ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2);
     }
+
     public static void main(String[] args) {
         System.out.println(new Solution().myPow(2, -2147483648));
     }
 }
-

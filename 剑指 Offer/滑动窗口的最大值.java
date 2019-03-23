@@ -16,9 +16,10 @@ import java.util.LinkedList;
  */
 
 class Solution {
-    public ArrayList<Integer> maxInWindows(int [] num, int size) {
+    public ArrayList<Integer> maxInWindows(int[] num, int size) {
         ArrayList<Integer> ans = new ArrayList<>(num.length - size + 1);
-        if (size == 0) return ans;
+        if (size == 0)
+            return ans;
         LinkedList<Integer> list = new LinkedList<>();
         for (int i = 0; i < num.length; i++) {
             while (!list.isEmpty() && num[list.peekLast()] <= num[i]) {

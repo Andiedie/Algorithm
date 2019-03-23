@@ -10,18 +10,19 @@ import java.util.PriorityQueue;
  * 2. 类似 TopK 的 Partition 解法
  */
 class Solution {
-  public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
-      if (k == 0 || k > input.length) return new ArrayList<>();
-      PriorityQueue<Integer> q = new PriorityQueue<>(Collections.reverseOrder());
-      for (int i = 0; i < k; i++) {
-          q.add(input[i]);
-      }
-      for (int i = k; i < input.length; i++) {
-          if (input[i] < q.peek()) {
-              q.poll();
-              q.add(input[i]);
-          }
-      }
-      return new ArrayList<>(q);
-  }
+    public ArrayList<Integer> GetLeastNumbers_Solution(int[] input, int k) {
+        if (k == 0 || k > input.length)
+            return new ArrayList<>();
+        PriorityQueue<Integer> q = new PriorityQueue<>(Collections.reverseOrder());
+        for (int i = 0; i < k; i++) {
+            q.add(input[i]);
+        }
+        for (int i = k; i < input.length; i++) {
+            if (input[i] < q.peek()) {
+                q.poll();
+                q.add(input[i]);
+            }
+        }
+        return new ArrayList<>(q);
+    }
 }

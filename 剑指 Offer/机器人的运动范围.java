@@ -7,37 +7,44 @@
  * 深度优先搜索
  */
 class Solution {
-  private int rows;
-  private int cols;
-  private int threshold;
-  private int count = 0;
-  boolean[][] visited;
-  public int movingCount(int threshold, int rows, int cols) {
-      this.rows = rows;
-      this.cols = cols;
-      this.threshold = threshold;
-      this.visited = new boolean[rows][cols];
-      dfs(0, 0);
-      return count;
-  }
-  private void dfs(int row, int col) {
-      if (row < 0 || row >= rows) return;
-      if (col < 0 || col >= cols) return;
-      if (visited[row][col]) return;
-      if (cal(row) + cal(col) > threshold) return;
-      count++;
-      visited[row][col] = true;
-      dfs(row - 1, col);
-      dfs(row + 1, col);
-      dfs(row, col - 1);
-      dfs(row, col + 1);
-  }
-  private int cal(int num) {
-      int res = 0;
-      while (num > 0) {
-          res += num % 10;
-          num /= 10;
-      }
-      return res;
-  }
+    private int rows;
+    private int cols;
+    private int threshold;
+    private int count = 0;
+    boolean[][] visited;
+
+    public int movingCount(int threshold, int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+        this.threshold = threshold;
+        this.visited = new boolean[rows][cols];
+        dfs(0, 0);
+        return count;
+    }
+
+    private void dfs(int row, int col) {
+        if (row < 0 || row >= rows)
+            return;
+        if (col < 0 || col >= cols)
+            return;
+        if (visited[row][col])
+            return;
+        if (cal(row) + cal(col) > threshold)
+            return;
+        count++;
+        visited[row][col] = true;
+        dfs(row - 1, col);
+        dfs(row + 1, col);
+        dfs(row, col - 1);
+        dfs(row, col + 1);
+    }
+
+    private int cal(int num) {
+        int res = 0;
+        while (num > 0) {
+            res += num % 10;
+            num /= 10;
+        }
+        return res;
+    }
 }

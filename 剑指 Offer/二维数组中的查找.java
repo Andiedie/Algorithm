@@ -10,15 +10,19 @@
  * 直到所有行列都被探索或者该元素正好等于目标，返回结果
  */
 class Solution {
-  public boolean Find(int target, int [][] array) {
-      if (array.length < 1 && array[0].length < 1) return false;
-      int row = 0, col = array[0].length - 1;
-      while (row < array.length && col >= 0) {
-          int cur = array[row][col];
-          if (cur == target) return true;
-          else if (cur > target) col--;
-          else row++;
-      }
-      return false;
-  }
+    public boolean Find(int target, int[][] array) {
+        if (array.length < 1 && array[0].length < 1)
+            return false;
+        int row = 0, col = array[0].length - 1;
+        while (row < array.length && col >= 0) {
+            int cur = array[row][col];
+            if (cur == target)
+                return true;
+            else if (cur > target)
+                col--;
+            else
+                row++;
+        }
+        return false;
+    }
 }

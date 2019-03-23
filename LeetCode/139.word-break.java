@@ -68,7 +68,8 @@ class Solution {
         Set<String> set = new HashSet<>(wordDict);
         // 记录字典里的最长单词，这样所有比这个单词长的单词都可以直接认为是不合法的
         int maxLength = 0;
-        for (String ss: wordDict) maxLength = Math.max(maxLength, ss.length());
+        for (String ss : wordDict)
+            maxLength = Math.max(maxLength, ss.length());
         // 对于字符串中的每一个位置
         for (int i = 0; i < s.length(); i++) {
             // 如果之前已经有合法单词结尾
@@ -86,4 +87,3 @@ class Solution {
         return isWordEndsBefore[s.length()];
     }
 }
-

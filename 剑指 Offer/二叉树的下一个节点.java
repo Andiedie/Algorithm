@@ -9,33 +9,34 @@
  * 4. 当前节点是父节点的右子节点，则接着向上寻找父节点，重复 3
  */
 class Solution {
-  public TreeLinkNode GetNext(TreeLinkNode pNode) {
-      if (pNode == null) return null;
-      if (pNode.right != null) {
-          pNode = pNode.right;
-          while (pNode.left != null) {
-              pNode = pNode.left;
-          }
-          return pNode;
-      }
-      while (pNode.next != null) {
-          TreeLinkNode parent = pNode.next;
-          if (parent.left == pNode) {
-              return parent;
-          }
-          pNode = parent;
-      }
-      return null;
-  }
+    public TreeLinkNode GetNext(TreeLinkNode pNode) {
+        if (pNode == null)
+            return null;
+        if (pNode.right != null) {
+            pNode = pNode.right;
+            while (pNode.left != null) {
+                pNode = pNode.left;
+            }
+            return pNode;
+        }
+        while (pNode.next != null) {
+            TreeLinkNode parent = pNode.next;
+            if (parent.left == pNode) {
+                return parent;
+            }
+            pNode = parent;
+        }
+        return null;
+    }
 }
 
 class TreeLinkNode {
-  int val;
-  TreeLinkNode left = null;
-  TreeLinkNode right = null;
-  TreeLinkNode next = null;
+    int val;
+    TreeLinkNode left = null;
+    TreeLinkNode right = null;
+    TreeLinkNode next = null;
 
-  TreeLinkNode(int val) {
-      this.val = val;
-  }
+    TreeLinkNode(int val) {
+        this.val = val;
+    }
 }

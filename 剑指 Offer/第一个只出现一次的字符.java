@@ -13,11 +13,13 @@ class Solution {
         char[] chars = str.toCharArray();
         for (char c : chars) {
             Integer count = map.get(c);
-            if (count == null) count = 0;
+            if (count == null)
+                count = 0;
             map.put(c, count + 1);
         }
         for (int i = 0; i < chars.length; i++) {
-            if (map.get(chars[i]) == 1) return i;
+            if (map.get(chars[i]) == 1)
+                return i;
         }
         return -1;
     }

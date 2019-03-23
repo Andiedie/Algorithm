@@ -57,10 +57,11 @@
 class Solution {
     public int hIndex(int[] citations) {
         int n = citations.length;
-        if (n == 0) return 0;
-        int [] buckets = new int[n + 1];
-        for(int c : citations) {
-            if(c >= n) {
+        if (n == 0)
+            return 0;
+        int[] buckets = new int[n + 1];
+        for (int c : citations) {
+            if (c >= n) {
                 buckets[n]++;
             } else {
                 buckets[c]++;
@@ -76,4 +77,3 @@ class Solution {
         return 0;
     }
 }
-

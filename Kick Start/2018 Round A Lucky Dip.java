@@ -55,7 +55,8 @@ class Solution {
             int n = in.nextInt();
             int k = in.nextInt();
             long[] v = new long[n];
-            for (int j = 0; j < n; j++) v[j] = in.nextLong();
+            for (int j = 0; j < n; j++)
+                v[j] = in.nextLong();
             Arrays.sort(v);
             double[] suffixV = new double[v.length + 1];
             suffixV[v.length] = 0;
@@ -71,13 +72,17 @@ class Solution {
         }
         in.close();
     }
+
     private static int binarySearch(long[] arr, double target) {
         int lo = 0, hi = arr.length - 1;
         while (lo <= hi) {
             int mid = lo + (hi - lo) / 2;
-            if (Math.abs(arr[mid] - target) < 1e-6) return mid;
-            if (arr[mid] > target) hi = mid - 1;
-            else lo = mid + 1;
+            if (Math.abs(arr[mid] - target) < 1e-6)
+                return mid;
+            if (arr[mid] > target)
+                hi = mid - 1;
+            else
+                lo = mid + 1;
         }
         return hi;
     }

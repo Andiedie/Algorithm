@@ -84,4 +84,3 @@ class Solution {
         return rev.substring(0, s.length() - f[str.length - 1]) + s;
     }
 }
-

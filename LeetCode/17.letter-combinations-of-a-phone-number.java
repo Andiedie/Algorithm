@@ -41,30 +41,22 @@ import java.util.List;
  * 使用递归扫描所有可能
  */
 class Solution {
-    private static char[][] table = {
-        {},
-        {},
-        {'a', 'b', 'c'},
-        {'d', 'e', 'f'},
-        {'g', 'h', 'i'},
-        {'j', 'k', 'l'},
-        {'m', 'n', 'o'},
-        {'p', 'q', 'r', 's'},
-        {'t', 'u', 'v'},
-        {'w', 'x', 'y', 'z'},
-    };
+    private static char[][] table = { {}, {}, { 'a', 'b', 'c' }, { 'd', 'e', 'f' }, { 'g', 'h', 'i' },
+            { 'j', 'k', 'l' }, { 'm', 'n', 'o' }, { 'p', 'q', 'r', 's' }, { 't', 'u', 'v' }, { 'w', 'x', 'y', 'z' }, };
     List<String> output = new ArrayList<>();
+
     public List<String> letterCombinations(String digits) {
         if (digits.length() != 0)
             backtrack("", digits);
         return output;
     }
+
     private void backtrack(String combination, String remainDigits) {
         if (remainDigits.length() == 0) {
             output.add(combination);
             return;
         }
-        int num  = remainDigits.charAt(0) - '0';
+        int num = remainDigits.charAt(0) - '0';
         char[] chs = table[num];
         for (char c : chs) {
             backtrack(combination + c, remainDigits.substring(1));

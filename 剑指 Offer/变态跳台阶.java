@@ -19,7 +19,7 @@
  * 所以 f(n) = 2^(n - 1)
  */
 class Solution {
-  public int JumpFloorII(int target) {
-      return (int)Math.pow(2, target - 1);
-  }
+    public int JumpFloorII(int target) {
+        return (int) Math.pow(2, target - 1);
+    }
 }

@@ -15,7 +15,8 @@ class Solution {
         q.offer(root);
         while (!q.isEmpty()) {
             TreeNode cur = q.poll();
-            if (cur == null) continue;
+            if (cur == null)
+                continue;
             q.offer(cur.left);
             q.offer(cur.right);
             ans.add(cur.val);

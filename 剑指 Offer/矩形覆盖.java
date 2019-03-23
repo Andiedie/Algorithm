@@ -7,12 +7,15 @@
  * f(2) = 2;
  */
 class Solution {
-  public int RectCover(int target) {
-      if (target == 0) return 0;
-      return f(1, 1, target);
-  }
-  private int f(int cur, int next, int n) {
-      if (n == 0) return cur;
-      return f(next, cur + next, n - 1);
-  }
+    public int RectCover(int target) {
+        if (target == 0)
+            return 0;
+        return f(1, 1, target);
+    }
+
+    private int f(int cur, int next, int n) {
+        if (n == 0)
+            return cur;
+        return f(next, cur + next, n - 1);
+    }
 }
