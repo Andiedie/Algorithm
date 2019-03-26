@@ -16,32 +16,35 @@ import java.util.Map;
  *
  * Given two integers representing the numerator and denominator of a fraction,
  * return the fraction in string format.
- * 
+ *
  * If the fractional part is repeating, enclose the repeating part in
  * parentheses.
- * 
+ *
  * Example 1:
- * 
- * 
+ *
+ *
  * Input: numerator = 1, denominator = 2
  * Output: "0.5"
- * 
- * 
+ *
+ *
  * Example 2:
- * 
- * 
+ *
+ *
  * Input: numerator = 2, denominator = 1
  * Output: "2"
- * 
+ *
  * Example 3:
- * 
- * 
+ *
+ *
  * Input: numerator = 2, denominator = 3
  * Output: "0.(6)"
- * 
- * 
+ *
+ *
  */
 /**
+ * 给定两个整肃代表分子和分母
+ * 返回除法结果，循环部分使用括号
+ *
  * Use solution in https://leetcode.com/problems/fraction-to-recurring-decimal/discuss/51106/My-clean-Java-solution
  * 注意要使用 long 防止溢出
  * 使用 Map 记录余数，当余数再次出现时表示循环

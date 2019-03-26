@@ -14,15 +14,15 @@ import java.util.List;
  * Total Submissions: 564.3K
  * Testcase Example:  '3'
  *
- * 
+ *
  * Given n pairs of parentheses, write a function to generate all combinations
  * of well-formed parentheses.
- * 
- * 
- * 
+ *
+ *
+ *
  * For example, given n = 3, a solution set is:
- * 
- * 
+ *
+ *
  * [
  * ⁠ "((()))",
  * ⁠ "(()())",
@@ -30,9 +30,11 @@ import java.util.List;
  * ⁠ "()(())",
  * ⁠ "()()()"
  * ]
- * 
+ *
  */
 /**
+ * 输出 n 对括号的所有合法组合方式
+ *
  * Use approach 2 in Solution: Backtracking
  * 回溯法解决，在暴力搜索的基础上，使用计数器剪枝
  */

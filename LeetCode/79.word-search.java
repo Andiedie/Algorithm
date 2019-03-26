@@ -12,28 +12,31 @@
  * Testcase Example:  '[["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]\n"ABCCED"'
  *
  * Given a 2D board and a word, find if the word exists in the grid.
- * 
+ *
  * The word can be constructed from letters of sequentially adjacent cell,
  * where "adjacent" cells are those horizontally or vertically neighboring. The
  * same letter cell may not be used more than once.
- * 
+ *
  * Example:
- * 
- * 
+ *
+ *
  * board =
  * [
  * ⁠ ['A','B','C','E'],
  * ⁠ ['S','F','C','S'],
  * ⁠ ['A','D','E','E']
  * ]
- * 
+ *
  * Given word = "ABCCED", return true.
  * Given word = "SEE", return true.
  * Given word = "ABCB", return false.
- * 
- * 
+ *
+ *
  */
 /**
+ * 给定一个二维字符数组，给定一个目标词，返回目标词是否能在数组中找到
+ * 只能在数组中上下左右移动，且相同的字符只能访问一次
+ *
  * Use solution in https://leetcode.com/problems/word-search/discuss/27658/Accepted-very-short-Java-solution.-No-additional-space
  * 深度优先搜索 + 回溯
  * 使用一个 '#' 来标记访问过的节点，避免重复使用

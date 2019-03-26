@@ -18,10 +18,10 @@ import java.util.Queue;
  *
  * Merge k sorted linked lists and return it as one sorted list. Analyze and
  * describe its complexity.
- * 
+ *
  * Example:
- * 
- * 
+ *
+ *
  * Input:
  * [
  * 1->4->5,
@@ -29,18 +29,21 @@ import java.util.Queue;
  * 2->6
  * ]
  * Output: 1->1->2->3->4->4->5->6
- * 
- * 
+ *
+ *
  */
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
+    }
+}
+
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-/**
+ * 将 k 个有序链表合并成一个有序链表
+ *
  * Use Approach 3 in solution: Optimize Approach 2 by Priority Queue
  * 初始化将所有链表的头放入优先队列中
  * 从优先队列从取出最小的节点
@@ -53,12 +56,7 @@ class Solution {
             return null;
         ListNode dummyHead = new ListNode(0);
         ListNode current = dummyHead;
-        Queue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
-            @Override
-            public int compare(ListNode o1, ListNode o2) {
-                return o1.val - o2.val;
-            }
-        });
+        Queue<ListNode> queue = new PriorityQueue<>(lists.length, (o1, o2) -> o1.val - o2.val);
         for (ListNode node : lists) {
             if (node != null) {
                 queue.add(node);

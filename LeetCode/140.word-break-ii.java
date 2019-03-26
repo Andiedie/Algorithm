@@ -21,18 +21,18 @@ import java.util.Set;
  * Given a non-empty string s and a dictionary wordDict containing a list of
  * non-empty words, add spaces in s to construct a sentence where each word is
  * a valid dictionary word. Return all such possible sentences.
- * 
+ *
  * Note:
- * 
- * 
+ *
+ *
  * The same word in the dictionary may be reused multiple times in the
  * segmentation.
  * You may assume the dictionary does not contain duplicate words.
- * 
- * 
+ *
+ *
  * Example 1:
- * 
- * 
+ *
+ *
  * Input:
  * s = "catsanddog"
  * wordDict = ["cat", "cats", "and", "sand", "dog"]
@@ -41,11 +41,11 @@ import java.util.Set;
  * "cats and dog",
  * "cat sand dog"
  * ]
- * 
- * 
+ *
+ *
  * Example 2:
- * 
- * 
+ *
+ *
  * Input:
  * s = "pineapplepenapple"
  * wordDict = ["apple", "pen", "applepen", "pine", "pineapple"]
@@ -56,25 +56,28 @@ import java.util.Set;
  * "pine applepen apple"
  * ]
  * Explanation: Note that you are allowed to reuse a dictionary word.
- * 
- * 
+ *
+ *
  * Example 3:
- * 
- * 
+ *
+ *
  * Input:
  * s = "catsandog"
  * wordDict = ["cats", "dog", "sand", "and", "cat"]
  * Output:
  * []
- * 
+ *
  */
 /**
+ * 给定一个非空字符串和一个词典
+ * 返回所有可能的分词结果
+ *
  * Use solution in https://leetcode.com/problems/word-break-ii/discuss/44167/My-concise-JAVA-solution-based-on-memorized-DFS/215095
  * 深度优先搜索
  * 首先，从开头寻找一个词典中有的词语
  * 然后对于剩余的子串，接着这样寻找，将所有寻找的结果拼起来，就是一种分词结果
  * 接着从开头寻找词典中有的下一个词语，重复上述步骤
- * 
+ *
  * 这里有几个可以优化的地方：
  * 1. 确认一个词语是否在在词典中，可以用 Set 加速
  * 2. 使用 Map 存储已经计算的结果，避免重复计算

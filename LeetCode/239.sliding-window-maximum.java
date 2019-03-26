@@ -18,14 +18,14 @@ import java.util.Deque;
  * from the very left of the array to the very right. You can only see the k
  * numbers in the window. Each time the sliding window moves right by one
  * position. Return the max sliding window.
- * 
+ *
  * Example:
- * 
- * 
+ *
+ *
  * Input: nums = [1,3,-1,-3,5,3,6,7], and k = 3
- * Output: [3,3,5,5,6,7] 
- * Explanation: 
- * 
+ * Output: [3,3,5,5,6,7]
+ * Explanation:
+ *
  * Window position                Max
  * ---------------               -----
  * [1  3  -1] -3  5  3  6  7       3
@@ -34,17 +34,20 @@ import java.util.Deque;
  * ⁠1  3  -1 [-3  5  3] 6  7       5
  * ⁠1  3  -1  -3 [5  3  6] 7       6
  * ⁠1  3  -1  -3  5 [3  6  7]      7
- * 
- * 
- * Note: 
+ *
+ *
+ * Note:
  * You may assume k is always valid, 1 ≤ k ≤ input array's size for non-empty
  * array.
- * 
+ *
  * Follow up:
  * Could you solve it in linear time?
- * 
+ *
  */
 /**
+ * 输入一个数组和一个滑动窗口的大小
+ * 输出每个滑动窗口的最大值
+ *
  * Use solution in https://leetcode.com/problems/sliding-window-maximum/discuss/65884/Java-O(n)-solution-using-deque-with-explanation
  * 扫描数组，并使用一个双向队列，记录当前最大值的指针
  * 这个双向队列中，我们只保证队列头部的指针一定指向当前窗口的最大元素即可

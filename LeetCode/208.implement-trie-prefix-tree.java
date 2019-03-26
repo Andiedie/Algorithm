@@ -12,29 +12,31 @@
  * Testcase Example:  '["Trie","insert","search","search","startsWith","insert","search"]\n[[],["apple"],["apple"],["app"],["app"],["app"],["app"]]'
  *
  * Implement a trie with insert, search, and startsWith methods.
- * 
+ *
  * Example:
- * 
- * 
+ *
+ *
  * Trie trie = new Trie();
- * 
+ *
  * trie.insert("apple");
  * trie.search("apple");   // returns true
  * trie.search("app");     // returns false
  * trie.startsWith("app"); // returns true
- * trie.insert("app");   
+ * trie.insert("app");
  * trie.search("app");     // returns true
- * 
- * 
+ *
+ *
  * Note:
- * 
- * 
+ *
+ *
  * You may assume that all inputs are consist of lowercase letters a-z.
  * All inputs are guaranteed to be non-empty strings.
- * 
- * 
+ *
+ *
  */
 /**
+ * 实现一颗支持 insert、search 和 startsWith 函数的字典树
+ *
  * Use solution in https://leetcode.com/problems/implement-trie-prefix-tree/solution/
  * 字典树 或 前缀树
  * 自动完成、拼写检查、路由表最长前缀匹配、九键盘预测、填字游戏等都可以使用

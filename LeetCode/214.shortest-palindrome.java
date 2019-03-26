@@ -14,48 +14,51 @@
  * Given a string s, you are allowed to convert it to a palindrome by adding
  * characters in front of it. Find and return the shortest palindrome you can
  * find by performing this transformation.
- * 
+ *
  * Example 1:
- * 
- * 
+ *
+ *
  * Input: "aacecaaa"
  * Output: "aaacecaaa"
- * 
- * 
+ *
+ *
  * Example 2:
- * 
- * 
+ *
+ *
  * Input: "abcd"
  * Output: "dcbabcd"
  */
 /**
+ * 输入一个字符串，你可以向字符串的前面添加字符
+ * 返回最短的回文字符串
+ *
  * Use approach 3 in solution: KMP
  * 首先确定的是，由于只能在字符串前端添加字符，所以为了凑出最短回文
  * 我们需要从输入的字符串中，找到一个最长的回文前缀，然后剩下的部分反转之后加到前面
  * 例如：
  * abacd，最长回文前缀是 aba，剩余 cd，因此将 cd 反转后加到前面即可：dcabacd
  * abcd，最长回文前缀是 a，剩余 bcd，因此将 bcd 反转后加到前面即可：dcbabcd
- * 
+ *
  * 因此问题转为如何寻找最长的回文前缀
- * 
+ *
  * 最 Naive 的做法：暴力搜索
  * 既然只需要找到最长回文前缀，那么暴力搜索最先被想到
  * 将输入字符串 str 反转保存为 rev，
  * 然后将 str 和 rev 错位对比，直到找到一个回文串
- * 
+ *
  * 过程类似如下：
  * 如果两个字符串 str 和 rev 直接相等，那么整个串都是回文的
  *          abad
  *          baba
  *              - 不匹配
- * 
+ *
  * 如果 str 的前缀和 rev 的后缀相等，那么这个串就是 str 最长回文前缀
  *          aba(d)
  *       (d)aba
  *              - 匹配
- * 
+ *
  * 仔细观察这个过程，我们实际上是在用 str 的所有前缀和 rev 的所有后缀进行对比，找到最长的匹配串
- * 
+ *
  * 这不就是 KMP 中的一步吗？
  * 在 KMP 中我们需要生成一个查找数组，table
  * 其中 table[i] 表示 str[0:i]这个串的前缀和后缀的最长公共串的长度，

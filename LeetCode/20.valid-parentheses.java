@@ -15,53 +15,56 @@ import java.util.Stack;
  *
  * Given a string containing just the characters '(', ')', '{', '}', '[' and
  * ']', determine if the input string is valid.
- * 
+ *
  * An input string is valid if:
- * 
- * 
+ *
+ *
  * Open brackets must be closed by the same type of brackets.
  * Open brackets must be closed in the correct order.
- * 
- * 
+ *
+ *
  * Note that an empty string is also considered valid.
- * 
+ *
  * Example 1:
- * 
- * 
+ *
+ *
  * Input: "()"
  * Output: true
- * 
- * 
+ *
+ *
  * Example 2:
- * 
- * 
+ *
+ *
  * Input: "()[]{}"
  * Output: true
- * 
- * 
+ *
+ *
  * Example 3:
- * 
- * 
+ *
+ *
  * Input: "(]"
  * Output: false
- * 
- * 
+ *
+ *
  * Example 4:
- * 
- * 
+ *
+ *
  * Input: "([)]"
  * Output: false
- * 
- * 
+ *
+ *
  * Example 5:
- * 
- * 
+ *
+ *
  * Input: "{[]}"
  * Output: true
- * 
- * 
+ *
+ *
  */
 /**
+ * 给定一个系列括号组合，判断这些组合是否合法。
+ *
+ *
  * Use stack.
  */
 class Solution {
@@ -84,9 +87,5 @@ class Solution {
             }
         }
         return stack.isEmpty();
-    }
-
-    public static void main(String[] args) {
-        new Solution().isValid("()");
     }
 }

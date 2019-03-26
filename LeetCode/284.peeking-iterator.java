@@ -36,6 +36,11 @@ import java.util.Iterator;
  * types, not just integer?
  *
  */
+
+/**
+ * 输入一个迭代器，构造一个新的迭代器，这个迭代器拥有一个新的函数 peek（返回 next 要返回的下一个数）
+ */
+
 // Java Iterator interface reference:
 // https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
 class PeekingIterator implements Iterator<Integer> {

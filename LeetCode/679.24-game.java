@@ -14,29 +14,29 @@ import java.util.List;
  * Total Submissions: 41.5K
  * Testcase Example:  '[4,1,8,7]'
  *
- * 
+ *
  * You have 4 cards each containing a number from 1 to 9.  You need to judge
  * whether they could operated through *, /, +, -, (, ) to get the value of
  * 24.
- * 
- * 
+ *
+ *
  * Example 1:
- * 
+ *
  * Input: [4, 1, 8, 7]
  * Output: True
  * Explanation: (8-4) * (7-1) = 24
- * 
- * 
- * 
+ *
+ *
+ *
  * Example 2:
- * 
+ *
  * Input: [1, 2, 1, 2]
  * Output: False
- * 
- * 
- * 
+ *
+ *
+ *
  * Note:
- * 
+ *
  * The division operator / represents real division, not integer division.  For
  * example, 4 / (1 - 2/3) = 12.
  * Every operation done is between two numbers.  In particular, we cannot use -
@@ -44,11 +44,13 @@ import java.util.List;
  * expression -1 - 1 - 1 - 1 is not allowed.
  * You cannot concatenate numbers together.  For example, if the input is [1,
  * 2, 1, 2], we cannot write this as 12 + 12.
- * 
- * 
- * 
+ *
+ *
+ *
  */
 /**
+ * 给定 4 个数，判断这 4 个数能否算出 24 点
+ *
  * Use approach 1 in solution: Backtracking
  * 回溯法
  * 首先需要确认的是，因为输入永远都是四个数，且操作符只有四个，所以最多只有 9216 种情况
@@ -59,7 +61,7 @@ import java.util.List;
  * 5. 有顺序地取出这两个数：2 * 1
  * 6. 通过四种可能的计算得出结果：* 4
  * 7. 检查结果是否为 24
- * 
+ *
  * 一共有 4 * 3 * 4 * 3 * 2 * 4 * 2 * 1 * 4 = 9216 种情况
  * 因此无论输入是什么，最多只需要 9216 次就能确认
  * 时间复杂度 O(1)
@@ -89,7 +91,7 @@ class Solution {
                             remain.add(nums.get(k));
                         }
                     // 对这两个数进行计算
-                    // k = 
+                    // k =
                     // 0：加法
                     // 1：乘法
                     // 2：减法

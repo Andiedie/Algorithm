@@ -16,33 +16,36 @@ import java.util.List;
  *
  * Given a string containing digits from 2-9 inclusive, return all possible
  * letter combinations that the number could represent.
- * 
+ *
  * A mapping of digit to letters (just like on the telephone buttons) is given
  * below. Note that 1 does not map to any letters.
- * 
- * 
- * 
+ *
+ *
+ *
  * Example:
- * 
- * 
+ *
+ *
  * Input: "23"
  * Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
- * 
- * 
+ *
+ *
  * Note:
- * 
+ *
  * Although the above answer is in lexicographical order, your answer could be
  * in any order you want.
- * 
+ *
  */
 /**
+ * 给定一串数字，每个数字都可以表示九键盘中一个按钮
+ * 返回所有的字母组合情况
+ *
  * Use Approach 1 in Solution: Backtracking
  * 回溯法
  * 使用递归扫描所有可能
  */
 class Solution {
     private static char[][] table = { {}, {}, { 'a', 'b', 'c' }, { 'd', 'e', 'f' }, { 'g', 'h', 'i' },
-            { 'j', 'k', 'l' }, { 'm', 'n', 'o' }, { 'p', 'q', 'r', 's' }, { 't', 'u', 'v' }, { 'w', 'x', 'y', 'z' }, };
+            { 'j', 'k', 'l' }, { 'm', 'n', 'o' }, { 'p', 'q', 'r', 's' }, { 't', 'u', 'v' }, { 'w', 'x', 'y', 'z' } };
     List<String> output = new ArrayList<>();
 
     public List<String> letterCombinations(String digits) {

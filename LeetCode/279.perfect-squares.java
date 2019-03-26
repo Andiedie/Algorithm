@@ -15,22 +15,24 @@ import java.util.Arrays;
  *
  * Given a positive integer n, find the least number of perfect square numbers
  * (for example, 1, 4, 9, 16, ...) which sum to n.
- * 
+ *
  * Example 1:
- * 
- * 
+ *
+ *
  * Input: n = 12
- * Output: 3 
+ * Output: 3
  * Explanation: 12 = 4 + 4 + 4.
- * 
+ *
  * Example 2:
- * 
- * 
+ *
+ *
  * Input: n = 13
  * Output: 2
  * Explanation: 13 = 4 + 9.
  */
 /**
+ * 输入一个整数 n，返回组成数字 n 所需的平方数的最小数量
+ *
  * Use solution in https://leetcode.com/problems/perfect-squares/discuss/71488/Summary-of-4-different-solutions-(BFS-DP-static-DP-and-mathematics)
  * 动态规划
  * dp[i][j] 表示大小是 i 的数字，由前 j 的方形组成个数的最小值

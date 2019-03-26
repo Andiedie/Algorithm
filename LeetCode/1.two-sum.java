@@ -33,6 +33,8 @@ import java.util.Map;
  *
  */
 /**
+ * 输入一个整数数组和一个目标数字，在数组中找到两个数字，它们的和等于目标数字，输出两个数在数组中的位置。
+ *
  * Use Approach 3 in Solutio: One-pass Hash Table
  * 使用一个 Map 记录已遍历的数值
  * 每次搜索时，在 Map 中查找是否已经出现了需要的数值

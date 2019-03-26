@@ -13,27 +13,27 @@ import java.util.Stack;
  * Total Submissions: 752.9K
  * Testcase Example:  '["MinStack","push","push","push","getMin","pop","top","getMin"]\n[[],[-2],[0],[-3],[],[],[],[]]'
  *
- * 
+ *
  * Design a stack that supports push, pop, top, and retrieving the minimum
  * element in constant time.
- * 
- * 
+ *
+ *
  * push(x) -- Push element x onto stack.
- * 
- * 
+ *
+ *
  * pop() -- Removes the element on top of the stack.
- * 
- * 
+ *
+ *
  * top() -- Get the top element.
- * 
- * 
+ *
+ *
  * getMin() -- Retrieve the minimum element in the stack.
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
  * Example:
- * 
+ *
  * MinStack minStack = new MinStack();
  * minStack.push(-2);
  * minStack.push(0);
@@ -42,20 +42,22 @@ import java.util.Stack;
  * minStack.pop();
  * minStack.top();      --> Returns 0.
  * minStack.getMin();   --> Returns -2.
- * 
- * 
+ *
+ *
  */
 /**
+ * 实现一个栈，包括包括一个额外函数 min，返回当前栈中的最小值
+ *
  * Use solution in https://leetcode.com/problems/min-stack/discuss/49014/Java-accepted-solution-using-one-stack
  * 当然可以直接使用两个栈实现
  * 一个正常使用
  * 另一个栈在更小的值出现时压入，第一个栈弹出时如果弹出的是最小值也一并弹出
- * 
+ *
  * 单栈实现方法
  * 使用一个变量 min 维护当前最小值
  * 当一个更小的值出现时，先将当前最小值压入栈中存档
  * 然后压入更小值，并更新 min
- * 
+ *
  * 弹出时，如果弹出的值等于当前最小值
  * 那么再弹出一个（就是刚刚的存档），更新 min
  */

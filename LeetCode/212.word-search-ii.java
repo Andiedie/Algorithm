@@ -16,15 +16,15 @@ import java.util.List;
  *
  * Given a 2D board and a list of words from the dictionary, find all words in
  * the board.
- * 
+ *
  * Each word must be constructed from letters of sequentially adjacent cell,
  * where "adjacent" cells are those horizontally or vertically neighboring. The
  * same letter cell may not be used more than once in a word.
- * 
+ *
  * Example:
- * 
- * 
- * Input: 
+ *
+ *
+ * Input:
  * words = ["oath","pea","eat","rain"] and board =
  * [
  * ⁠ ['o','a','a','n'],
@@ -32,25 +32,29 @@ import java.util.List;
  * ⁠ ['i','h','k','r'],
  * ⁠ ['i','f','l','v']
  * ]
- * 
+ *
  * Output: ["eat","oath"]
- * 
- * 
+ *
+ *
  * Note:
  * You may assume that all inputs are consist of lowercase letters a-z.
  */
 /**
+ * 给定一个二维字符数组和一个词典
+ * 返回所有可以在二维字符数组中找到的词
+ * 只能访问上下左右的字符且每个字符只能访问一次
+ *
  * Use solution in https://leetcode.com/problems/word-search-ii/submissions/
  * 使用深度优先搜索 + 字典树 + 回溯的方法
  * 这题之前先看看 [79] Word Search 和 [208] Implement Trie (Prefix Tree)
  * 首先是关于 Word Search 如何搜索的问题
  * 使用深度优先搜索和回溯，我们在每一个点都尝试能不能搜到目标词
- * 
+ *
  * 在这一题中，由于有多个词，朴素的想法是，在每个点都尝试任何一个目标词
- * 
+ *
  * 有一个地方可能产生重复计算，那就是相同前缀的词，这个前缀会被搜索多次
  * 因此可以使用字典树加速，这样相同前缀只会被计算一次，当搜索到一个目标词后，继续搜索相同前缀的下一个目标词
- * 
+ *
  * 还有一些别的 Java 语法的加速：
  * 1. 使用 String.toCharArray() 而不是 String.charAt()
  * 2. 使用 StringBuilder 而不是 String + String

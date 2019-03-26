@@ -13,13 +13,13 @@
  *
  * Given a binary search tree, write a function kthSmallest to find the kth
  * smallest element in it.
- * 
- * Note: 
+ *
+ * Note:
  * You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
- * 
+ *
  * Example 1:
- * 
- * 
+ *
+ *
  * Input: root = [3,1,4,null,2], k = 1
  * ⁠  3
  * ⁠ / \
@@ -27,10 +27,10 @@
  * ⁠ \
  * 2
  * Output: 1
- * 
+ *
  * Example 2:
- * 
- * 
+ *
+ *
  * Input: root = [5,3,6,2,4,null,null,1], k = 3
  * ⁠      5
  * ⁠     / \
@@ -40,30 +40,23 @@
  * ⁠ /
  * ⁠1
  * Output: 3
- * 
- * 
+ *
+ *
  * Follow up:
  * What if the BST is modified (insert/delete operations) often and you need to
  * find the kth smallest frequently? How would you optimize the kthSmallest
  * routine?
- * 
+ *
  */
 /**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-/**
+ * 给定一个 BST，输出第 k 小的数字
+ *
  * Use solution in https://leetcode.com/problems/kth-smallest-element-in-a-bst/discuss/63660/3-ways-implemented-in-JAVA-(Python)%3A-Binary-Search-in-order-iterative-and-recursive
  * 深度优先搜索 中序遍历
  * 初始化计数器为 k
  * 递归的“递”过程，从 root 节点一路向左到最左子节点
  * 归：每次给计数器减 1，计数器为 0 时表示找到 kth
- * 
+ *
  */
 class TreeNode {
     int val;

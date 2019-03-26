@@ -15,32 +15,35 @@
  * islands. An island is surrounded by water and is formed by connecting
  * adjacent lands horizontally or vertically. You may assume all four edges of
  * the grid are all surrounded by water.
- * 
+ *
  * Example 1:
- * 
- * 
+ *
+ *
  * Input:
  * 11110
  * 11010
  * 11000
  * 00000
- * 
+ *
  * Output: 1
- * 
- * 
+ *
+ *
  * Example 2:
- * 
- * 
+ *
+ *
  * Input:
  * 11000
  * 11000
  * 00100
  * 00011
- * 
+ *
  * Output: 3
- * 
+ *
  */
 /**
+ * 给定一个二维数组作为地图，1 表示陆地，0 表示水
+ * 计算岛屿数量
+ *
  * Use solution https://leetcode.com/problems/number-of-islands/discuss/56349/7-lines-Python-~14-lines-Java
  * 沉没！
  * 每找到一块陆地，就将周围的所有陆地递归沉下去，并将计数器加一

@@ -51,6 +51,8 @@ import java.util.Map;
  *
  */
 /**
+ * 给定一个字符串，寻找最长的不重复子串。
+ *
  * Use Approach 3 in Solution: Sliding Window Optimized
  * 使用一个滑动窗口，窗口里是不重复的字符串
  * 当滑动窗口的右边扩展一个新的字符时，使用 Map 判断该字符是否在窗口中
